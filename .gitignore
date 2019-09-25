@@ -1,0 +1,5 @@
+*.md
+build_all
+html/
+*.hi
+*.o
