@@ -19,9 +19,5 @@ calcvaluesr ys f a h ks = do
                             else
                                 do
                                     let k = head ks
-                                    if k `mod` 2 == 1
-                                    then
-                                        calcvaluesr (ys ++ [4 * (f (a + (fromIntegral k) * h))]) f a h (tail ks)
-                                    else
-                                        calcvaluesr (ys ++ [2 * (f (a + (fromIntegral k) * h))]) f a h (tail ks)
+                                    calcvaluesr (ys ++ [(if k `mod` 2 == 1 then 4 else 2) * (f (a + (fromIntegral k) * h))]) f a h (tail ks)
 
